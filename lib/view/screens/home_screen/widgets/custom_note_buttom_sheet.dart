@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../widgets/custom_sized_box.dart';
-import '../../../widgets/custom_text_form_field.dart';
-import 'custom_elevated_button.dart';
+part of '../home_screen.dart';
 
 class CWAddNoteBottomSheet extends StatelessWidget {
   const CWAddNoteBottomSheet({

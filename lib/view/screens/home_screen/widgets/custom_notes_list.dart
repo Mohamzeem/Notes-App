@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'custom_item_note.dart';
+part of '../home_screen.dart';
 
 class CWNotesList extends StatelessWidget {
   const CWNotesList({super.key});

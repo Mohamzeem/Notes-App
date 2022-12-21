@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../../../consts/colors.dart';
-import '../../../widgets/custom_text.dart';
+part of '../home_screen.dart';
 
 class CWElevatedButton extends StatelessWidget {
   const CWElevatedButton({
@@ -11,12 +9,12 @@ class CWElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: kMainColor,
           elevation: 10,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-      onPressed: () {},
       child: const CWText(
           text: 'Add Note',
           fontSize: 22,

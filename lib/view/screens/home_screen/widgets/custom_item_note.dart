@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notes_app/view/screens/note_screem/note_screen.dart';
-import 'package:notes_app/view/widgets/custom_text.dart';
-import '../../../../consts/colors.dart';
+part of '../home_screen.dart';
 
 class CWItemNote extends StatelessWidget {
   const CWItemNote({super.key});

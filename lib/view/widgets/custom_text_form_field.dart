@@ -18,6 +18,11 @@ class CWTextField extends StatelessWidget {
     return TextFormField(
       onSaved: onSaved,
       validator: (value) {
+        // if (value?.isEmpty ?? true) {
+        //   return 'Field Required';
+        // } else {
+        //   return null;
+        // }
         if (value?.isEmpty ?? true) {
           return 'Field Required';
         } else {

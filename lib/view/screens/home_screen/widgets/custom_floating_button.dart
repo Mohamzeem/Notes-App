@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../consts/colors.dart';
-import 'custom_note_buttom_sheet.dart';
+part of '../home_screen.dart';
 
 class CWFloatingButton extends StatelessWidget {
   const CWFloatingButton({
