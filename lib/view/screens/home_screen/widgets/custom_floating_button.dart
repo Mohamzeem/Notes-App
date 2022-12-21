@@ -14,6 +14,7 @@ class CWFloatingButton extends StatelessWidget {
       backgroundColor: Colors.cyan,
       onPressed: () {
         showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.r)),
             backgroundColor: kBlack.withOpacity(0.9),

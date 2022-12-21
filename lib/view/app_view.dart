@@ -16,6 +16,7 @@ class AppView extends StatelessWidget {
         builder: ((context, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
+                fontFamily: 'Poppins',
                 scaffoldBackgroundColor: kBlack,
                 // brightness: Brightness.dark,
                 appBarTheme: const AppBarTheme(

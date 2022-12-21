@@ -1,18 +1,25 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:notes_app/consts/colors.dart';
 import 'package:notes_app/view/widgets/custom_text.dart';
 
 class CWAppBar extends StatelessWidget {
-  const CWAppBar({super.key});
-
+  const CWAppBar({
+    Key? key,
+    required this.icon,
+    required this.text,
+  }) : super(key: key);
+  final IconData icon;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const CWText(
-          text: 'Notes',
+        CWText(
+          text: text,
           fontSize: 28,
           fontWeight: FontWeight.w500,
           color: kWhite,
@@ -27,9 +34,9 @@ class CWAppBar extends StatelessWidget {
           child: IconButton(
               onPressed: (() {}),
               icon: Icon(
-                Icons.search,
+                icon,
                 color: kWhite,
-                size: 28.sp,
+                size: 28.r,
               )),
         )
       ],
