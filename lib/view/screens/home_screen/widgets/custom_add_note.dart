@@ -19,41 +19,46 @@ class _AddNoteFormState extends State<AddNoteForm> {
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
-      child: Column(
-        children: [
-          Padding(
-              padding: EdgeInsets.only(top: 20.h, left: 15.w, right: 15.w),
-              child: CWTextField(
-                label: 'Title',
-                onSaved: (value) {
-                  title = value;
-                },
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 20.h, left: 15.w, right: 15.w),
-              child: CWTextField(
-                label: 'Content',
-                maxLines: 8,
-                onSaved: (value) {
-                  subTitle = value;
-                },
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 20.h, left: 15.w, right: 15.w),
-              child: CWSizedBox(
-                  height: 0.07,
-                  width: 1,
-                  child: CWElevatedButton(
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        formKey.currentState!.save();
-                      } else {
-                        autovalidateMode = AutovalidateMode.always;
-                        setState(() {});
-                      }
-                    },
-                  ))),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        child: Column(
+          children: [
+            CWTextField(
+              label: 'Title',
+              onSaved: (value) {
+                title = value;
+              },
+            ),
+            CWTextField(
+              label: 'Content',
+              maxLines: 8,
+              onSaved: (value) {
+                subTitle = value;
+              },
+            ),
+            BlocBuilder<AddNoteCubit, AddNoteState>(
+              builder: (context, state) {
+                return CWElevatedButton(
+                  isLoading: State is AddNoteLoading ? true : false,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      var noteModel = NoteModel(
+                          title: title!,
+                          subTitle: subTitle!,
+                          date: DateTime.now().toString(),
+                          color: Colors.pink.value);
+                      BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class NoteScreen extends StatelessWidget {
             children: [
               const CWAppBar(
                 icon: (Icons.done),
-                text: 'Edit Notes',
+                text: 'Edit Note',
               ),
               Padding(
                 padding: EdgeInsets.only(top: 20.h),

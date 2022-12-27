@@ -15,56 +15,61 @@ class CWTextField extends StatelessWidget {
   final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      onSaved: onSaved,
-      validator: (value) {
-        if (value?.isEmpty ?? true) {
-          return 'Field Required';
-        } else {
-          return null;
-        }
-      },
-      keyboardType: TextInputType.text,
-      maxLines: maxLines,
-      style: TextStyle(
-        fontSize: 17.sp,
-        fontWeight: FontWeight.w500,
-        color: kWhite,
-      ),
-      cursorColor: kBlack,
-      decoration: InputDecoration(
-        fillColor: Colors.grey.shade100,
-        hintText: label,
-        hintStyle: TextStyle(
-            fontSize: 18.sp, fontWeight: FontWeight.normal, color: kMainColor),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: kWhite,
-          ),
+    return Padding(
+      padding: EdgeInsets.only(top: 20.h),
+      child: TextFormField(
+        onSaved: onSaved,
+        validator: (value) {
+          if (value?.isEmpty ?? true) {
+            return 'Field Required';
+          } else {
+            return null;
+          }
+        },
+        keyboardType: TextInputType.text,
+        maxLines: maxLines,
+        style: TextStyle(
+          fontSize: 17.sp,
+          fontWeight: FontWeight.w500,
+          color: kWhite,
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: kMainColor,
+        cursorColor: kBlack,
+        decoration: InputDecoration(
+          fillColor: Colors.grey.shade100,
+          hintText: label,
+          hintStyle: TextStyle(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.normal,
+              color: kMainColor),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: kWhite,
+            ),
           ),
-        ),
-        disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: kWhite,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: kMainColor,
+            ),
           ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: kMainColor,
+          disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: kWhite,
+            ),
           ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: kWhite,
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: kMainColor,
+            ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: kWhite,
+            ),
           ),
         ),
       ),
