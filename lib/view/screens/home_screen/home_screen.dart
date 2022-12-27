@@ -7,11 +7,13 @@ import '../../widgets/custom_sized_box.dart';
 import '../../widgets/custom_text.dart';
 import '../../widgets/custom_text_form_field.dart';
 import '../note_screem/note_screen.dart';
+
 part './widgets/custom_elevated_button.dart';
 part './widgets/custom_floating_button.dart';
 part './widgets/custom_item_note.dart';
 part './widgets/custom_note_buttom_sheet.dart';
 part './widgets/custom_notes_list.dart';
+part './widgets/custom_add_note.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
