@@ -9,9 +9,11 @@ class CWAppBar extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.text,
+    this.onPressed,
   }) : super(key: key);
   final IconData icon;
   final String text;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,7 +33,7 @@ class CWAppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           child: IconButton(
-              onPressed: (() {}),
+              onPressed: onPressed,
               icon: Icon(
                 icon,
                 color: kWhite,

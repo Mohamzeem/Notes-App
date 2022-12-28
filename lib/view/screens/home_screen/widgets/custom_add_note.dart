@@ -22,6 +22,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CWTextField(
               label: 'Title',
@@ -36,6 +37,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 subTitle = value;
               },
             ),
+            const CWColorsListView(),
             BlocBuilder<AddNoteCubit, AddNoteState>(
               builder: (context, state) {
                 return CWElevatedButton(
@@ -43,12 +45,17 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
+                      var currentDate = DateTime.now();
+                      var formattedDate = DateFormat('EEE, d MMM yyyy, h:mm a')
+                          .format(currentDate);
                       var noteModel = NoteModel(
-                          title: title!,
-                          subTitle: subTitle!,
-                          date: DateTime.now().toString(),
-                          color: Colors.pink.value);
+                        title: title!,
+                        subTitle: subTitle!,
+                        date: formattedDate,
+                        color: Colors.pink.value,
+                      );
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                      BlocProvider.of<AllNotesCubit>(context).getAllNotes();
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
