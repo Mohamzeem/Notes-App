@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notes_app/consts/colors.dart';
-import 'package:notes_app/view/widgets/custom_text.dart';
+import '../../consts/colors.dart';
+import '../screens/home_screen/home_screen.dart';
+import 'custom_text.dart';
 
 class CWAppBar extends StatelessWidget {
   const CWAppBar({
@@ -21,25 +21,30 @@ class CWAppBar extends StatelessWidget {
       children: [
         CWText(
           text: text,
-          fontSize: 28,
-          fontWeight: FontWeight.w500,
-          color: kWhite,
+          fontSize: 32,
+          fontWeight: FontWeight.w700,
+          color: Colors.cyan,
         ),
-        Container(
-          height: 40.h,
-          width: 40.w,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: IconButton(
-              onPressed: onPressed,
-              icon: Icon(
-                icon,
-                color: kWhite,
-                size: 28.r,
-              )),
-        )
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.cyan, elevation: 10),
+          onPressed: () {
+            showModalBottomSheet(
+                isScrollControlled: true,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.r)),
+                backgroundColor: kBlack.withOpacity(0.9),
+                context: context,
+                builder: ((context) {
+                  return const CWAddNoteBottomSheet();
+                }));
+          },
+          child: const CWText(
+              text: 'New Note',
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: kWhite),
+        ),
       ],
     );
   }

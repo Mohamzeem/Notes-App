@@ -22,7 +22,6 @@ class AppView extends StatelessWidget {
                 theme: ThemeData(
                   fontFamily: 'Poppins',
                   scaffoldBackgroundColor: kBlack,
-                  // brightness: Brightness.dark,
                   appBarTheme: const AppBarTheme(
                     backgroundColor: kWhite,
                     systemOverlayStyle: SystemUiOverlayStyle(

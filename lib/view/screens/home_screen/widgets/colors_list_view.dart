@@ -1,8 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+part of '../home_screen.dart';
 
 class CWColorsListView extends StatefulWidget {
   const CWColorsListView({super.key});
@@ -13,11 +9,13 @@ class CWColorsListView extends StatefulWidget {
 
 class _CWColorsListViewState extends State<CWColorsListView> {
   List<Color> colorslist = [
+    Colors.blue.shade300,
     Colors.green.shade300,
     Colors.grey.shade700,
     Colors.orange.shade500,
     Colors.yellow,
-    Colors.red.shade300
+    Colors.red.shade300,
+    Colors.red
   ];
   int currentIndex = 0;
   @override
@@ -64,7 +62,7 @@ class CWCircleAvatar extends StatelessWidget {
     return isActive
         ? CircleAvatar(
             backgroundColor: Colors.white,
-            radius: 22.r,
+            radius: 21.r,
             child: CircleAvatar(
               backgroundColor: color,
               radius: 16.r,
@@ -72,7 +70,7 @@ class CWCircleAvatar extends StatelessWidget {
           )
         : CircleAvatar(
             backgroundColor: color,
-            radius: 22.r,
+            radius: 21.r,
           );
   }
 }
