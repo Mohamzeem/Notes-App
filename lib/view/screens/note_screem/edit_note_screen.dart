@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/view/widgets/custom_app_bar.dart';
+import 'package:notes_app/view/screens/note_screem/custom_edit_notes_bar.dart';
 import '../../widgets/custom_text_form_field.dart';
 
 class EditNoteScreen extends StatefulWidget {
@@ -30,9 +30,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
           padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Column(
             children: [
-              CWAppBar(
-                icon: (Icons.done),
-                text: 'Edit Note',
+              CWEditNoteAppBar(
                 onPressed: () {
                   widget.noteModel.title = title ?? widget.noteModel.title;
                   widget.noteModel.subTitle =

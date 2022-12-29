@@ -7,18 +7,18 @@ import 'package:notes_app/consts/colors.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import '../../../cubits/all_notes_cubit/all_notes_cubit.dart';
-import '../../widgets/custom_app_bar.dart';
+import '../note_screem/edit_note_screen.dart';
+import 'widgets/home_bar.dart';
 import '../../widgets/custom_sized_box.dart';
 import '../../widgets/custom_text.dart';
 import '../../widgets/custom_text_form_field.dart';
-import '../note_screem/edite_note_screen.dart';
 
-part './widgets/custom_elevated_button.dart';
-part './widgets/custom_item_note.dart';
-part './widgets/custom_note_buttom_sheet.dart';
-part './widgets/custom_notes_list.dart';
-part './widgets/custom_add_note.dart';
-part './widgets/colors_list_view.dart';
+part 'widgets/elevated_button.dart';
+part 'widgets/item_note.dart';
+part 'widgets/note_buttom_sheet.dart';
+part 'widgets/notes_list.dart';
+part 'widgets/add_note.dart';
+part 'widgets/list_view.dart';
 
 class HomeScreenAllNotes extends StatefulWidget {
   const HomeScreenAllNotes({super.key});
@@ -42,7 +42,7 @@ class _HomeScreenAllNotesState extends State<HomeScreenAllNotes> {
           padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Column(
             children: const [
-              CWAppBar(icon: (Icons.search), text: 'Notes'),
+              CWNotesAppBar(),
               CWNotesList(),
             ],
           ),
