@@ -1,20 +1,23 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:notes_app/consts/colors.dart';
 
 class CWTextField extends StatelessWidget {
   const CWTextField({
     Key? key,
-    required this.label,
+    this.label,
     this.maxLines,
     this.onSaved,
     this.onChanged,
+    this.controller,
   }) : super(key: key);
-  final String label;
+  final String? label;
   final int? maxLines;
   final void Function(String?)? onSaved;
   final Function(String)? onChanged;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,6 +25,7 @@ class CWTextField extends StatelessWidget {
       child: TextFormField(
         onSaved: onSaved,
         onChanged: onChanged,
+        controller: controller,
         validator: (value) {
           if (value?.isEmpty ?? true) {
             return 'Field Required';
@@ -36,7 +40,7 @@ class CWTextField extends StatelessWidget {
           fontWeight: FontWeight.w500,
           color: kWhite,
         ),
-        cursorColor: kBlack,
+        cursorColor: kMainColor,
         decoration: InputDecoration(
           fillColor: Colors.grey.shade100,
           hintText: label,

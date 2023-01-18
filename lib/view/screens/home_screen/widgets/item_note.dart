@@ -33,6 +33,7 @@ class CWItemNote extends StatelessWidget {
                   text: noteModel.title,
                   fontSize: 25,
                   fontWeight: FontWeight.w400,
+                  maxLines: 1,
                   color: kBlack),
               subtitle: Padding(
                 padding: EdgeInsets.only(top: 8.h),
@@ -40,7 +41,8 @@ class CWItemNote extends StatelessWidget {
                     text: noteModel.subTitle,
                     fontSize: 18,
                     fontWeight: FontWeight.w100,
-                    heightText: 1.1,
+                    heightText: 1.1.h,
+                    maxLines: 3,
                     color: kBlack.withOpacity(0.5)),
               ),
               trailing: IconButton(

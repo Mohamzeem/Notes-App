@@ -20,7 +20,7 @@ class CWNotesAppBar extends StatelessWidget {
           fontWeight: FontWeight.w700,
           color: Colors.cyan,
         ),
-        ElevatedButton(
+        ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.cyan, elevation: 10),
           onPressed: () {
@@ -35,7 +35,8 @@ class CWNotesAppBar extends StatelessWidget {
               }),
             );
           },
-          child: const CWText(
+          icon: const Icon(Icons.add),
+          label: const CWText(
             text: 'New Note',
             fontSize: 16,
             fontWeight: FontWeight.w600,

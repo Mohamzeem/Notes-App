@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/consts/colors.dart';
 import 'package:notes_app/view/screens/home_screen/home_screen.dart';
-import '../cubits/all_notes_cubit/all_notes_cubit.dart';
+import 'cubits/all_notes_cubit/all_notes_cubit.dart';
 
 class AppView extends StatelessWidget {
   const AppView({super.key});
@@ -17,20 +17,23 @@ class AppView extends StatelessWidget {
           designSize: const Size(392.72727272727275, 781.0909090909091),
           minTextAdapt: true,
           splitScreenMode: true,
-          builder: ((context, child) => MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData(
-                  fontFamily: 'Poppins',
-                  scaffoldBackgroundColor: kBlack,
-                  appBarTheme: const AppBarTheme(
-                    backgroundColor: kWhite,
-                    systemOverlayStyle: SystemUiOverlayStyle(
-                      statusBarIconBrightness: Brightness.light,
-                    ),
+          builder: ((context, child) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'MY NOTES',
+              theme: ThemeData(
+                fontFamily: 'Poppins',
+                scaffoldBackgroundColor: kBlack,
+                appBarTheme: const AppBarTheme(
+                  backgroundColor: kWhite,
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarIconBrightness: Brightness.light,
                   ),
                 ),
-                home: const HomeScreenAllNotes(),
-              ))),
+              ),
+              home: const HomeScreenAllNotes(),
+            );
+          })),
     );
   }
 }

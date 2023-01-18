@@ -1,7 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of '../home_screen.dart';
 
 class CWNotesList extends StatelessWidget {
-  const CWNotesList({super.key});
+  const CWNotesList({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

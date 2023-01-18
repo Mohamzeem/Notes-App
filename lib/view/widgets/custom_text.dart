@@ -28,12 +28,12 @@ class CWText extends StatelessWidget {
       maxLines: maxLines,
       textAlign: textAlign,
       style: TextStyle(
-        fontSize: fontSize.sp,
-        fontWeight: fontWeight,
-        color: color,
-        decoration: textDecoration,
-        height: heightText,
-      ),
+          fontSize: fontSize.sp,
+          fontWeight: fontWeight,
+          color: color,
+          decoration: textDecoration,
+          height: heightText,
+          overflow: TextOverflow.ellipsis),
     );
   }
 }
